@@ -1,26 +1,33 @@
 """
-This module provides a set of tools for working with vectors and reference frames in three-dimensional space.
-The module is implemented using the Sympy physics vector module, which provides a set of tools for working with vectors and vector operations.
+This module provides a set of tools for working with vectors and reference
+frames in three-dimensional space.
+The module is implemented using the Sympy physics vector module, which
+provides a set of tools for working with vectors and vector operations.
 
 The functions in the module include:
 
     reference_frame(frame, x=r"\imath", y=r"\jmath", z=r"\mathbf k")
-        Creates a reference frame in Sympy, which is a coordinate system used to define vectors.
+        Creates a reference frame in Sympy, which is a coordinate system \
+            used to define vectors.
 
     vector(frame, rx, ry, rz=0)
-        Creates a vector in a specified reference frame, with components defined along the x, y, and z axes.
+        Creates a vector in a specified reference frame, with components \
+            defined along the x, y, and z axes.
 
     vector_cos(frame, magnitude, theta, phi, psi=sp.pi / 2)
-        Creates a vector with components defined by cosine values in a specified reference frame.
+        Creates a vector with components defined by cosine values in a \
+            specified reference frame.
 
     vector_to_list(frame, v)
         Converts a vector in a reference frame to a list of components.
 
     vector_line(start, finish)
-        Calculates the vector difference between two points, representing a line segment.
+        Calculates the vector difference between two points, representing
+        a line segment.
 
     vector_line_eqn(frame, start, finish, lamda)
-        Calculates a vector equation for a line segment in a specified reference frame.
+        Calculates a vector equation for a line segment in a specified
+        reference frame.
 
     angle_between_vectors(a, b)
         Calculates the angle in radians between two vectors.
@@ -34,10 +41,16 @@ The functions in the module include:
     print_aligned_latex_equations(*args)
         Prints aligned LaTeX equations using IPython display.
 
-The module also includes a set of unit tests using the doctest module, which verifies that the functions are working as expected.
+The module also includes a set of unit tests using the doctest module, \
+    which verifies that the functions are working as expected.
 
-Overall, this module provides a set of tools for working with vectors and reference frames in three-dimensional space, which can be useful in a variety of applications, including physics, engineering, and computer graphics.
-By using the Sympy physics vector module, the functions in this module can be used to perform symbolic vector operations, which can be useful for analytical calculations and derivations.
+Overall, this module provides a set of tools for working with vectors and \
+    reference frames in three-dimensional space, which can be useful in a \
+    variety of applications, including physics, engineering, and <
+    computer graphics.
+By using the Sympy physics vector module, the functions in this module \
+    can be used to perform symbolic vector operations, which can be useful \
+    for analytical calculations and derivations.
 """
 
 import IPython.display as ipd
@@ -131,7 +144,7 @@ def vector(frame: spv.ReferenceFrame, rx, ry, rz=0) -> spv.Vector:
         >>> vector(N, 1, 2, 3)
         N.x + 2*N.y + 3*N.z
     """
-    return rx * :frame.x + ry * :frame.y + rz * :frame.z
+    return rx * frame.x + ry * frame.y + rz * frame.z
 
 
 def vector_cos(
@@ -180,11 +193,13 @@ def vector_cos(
 
         >>> n = sp.sqrt(93)
         >>> vector_cos(N, n, 5/n, 2/n, 8/n)
-        sqrt(93)*cos(5*sqrt(93)/93)*N.x + sqrt(93)*cos(2*sqrt(93)/93)*N.y + sqrt(93)*cos(8*sqrt(93)/93)*N.z
+        sqrt(93)*cos(5*sqrt(93)/93)*N.x + sqrt(93)*cos(2*sqrt(93)/93)*N.y\
+ + sqrt(93)*cos(8*sqrt(93)/93)*N.z
+
     """
 
-    return magnitude * :(
-        sp.cos(theta) * :frame.x + sp.cos(phi) * :frame.y + sp.cos(psi) * :frame.z
+    return magnitude * (
+        sp.cos(theta) * frame.x + sp.cos(phi) * frame.y + sp.cos(psi) * frame.z
     )
 
 
@@ -200,11 +215,11 @@ def vector_to_list(frame: spv.ReferenceFrame, v: spv.Vector) -> list:
 
     Examples:
         >>> N = spv.ReferenceFrame('N')
-        >>> v = 3 * :N.x + 4 * :N.y + 5 * :N.z
+        >>> v = 3 * N.x + 4 * N.y + 5 * N.z
         >>> vector_to_list(N, v)
         [3, 4, 5]
 
-        >>> v = 3 * :N.x + 4 * :N.y
+        >>> v = 3 * N.x + 4 * N.y
         >>> vector_to_list(N, v)
         [3, 4, 0]
 
@@ -251,17 +266,17 @@ def vector_line_eqn(
     Examples:
         >>> A = spv.ReferenceFrame('A')
         >>> start = A.x*0 + A.y*0 + A.z*0  # Zero vector
-        >>> finish = 3 * :A.x + 4 * :A.y + 5 * :A.z
+        >>> finish = 3 * A.x + 4 * A.y + 5 * A.z
         >>> lamda = sp.symbols('lambda')
         >>> vector_line_eqn(start, finish, lamda)
         3*lambda*A.x + 4*lambda*A.y + 5*lambda*A.z
 
-        >>> start = 2 * :A.x - A.y
-        >>> finish = 4 * :A.y + 3 * :A.z
+        >>> start = 2 * A.x - A.y
+        >>> finish = 4 *A.y + 3 * A.z
         >>> vector_line_eqn(start, finish, lamda)
         (2 - 2*lambda)*A.x + (5*lambda - 1)*A.y + 3*lambda*A.z
     """
-    return start + vector_line(start, finish) * :lamda
+    return start + vector_line(start, finish) * lamda
 
 
 def angle_between_vectors(a: spv.Vector, b: spv.Vector) -> float:
@@ -277,8 +292,8 @@ def angle_between_vectors(a: spv.Vector, b: spv.Vector) -> float:
 
     Examples:
         >>> A = spv.ReferenceFrame('A')
-        >>> a = 3 * :A.x + 4 * :A.y
-        >>> b = 2 * :A.x - A.y
+        >>> a = 3 * A.x + 4 * A.y
+        >>> b = 2 * A.x - A.y
         >>> angle_between_vectors(a, b)
         acos(2*sqrt(5)/25)
 
@@ -367,4 +382,4 @@ def print_aligned_latex_equations(*args):
 if __name__ == "__main__":
     import doctest
 
-    doctest.testmod(verbose=True)
+    doctest.testmod(verbose=False)
