@@ -1,0 +1,30 @@
+name: sympytools
+channels:
+  - conda-forge
+  - bokeh
+  - defaults
+dependencies:
+  - python=3.10
+  - ipython
+  - ipykernel
+  - numpy
+  - matplotlib
+  - seaborn
+  - pandas
+  - sympy
+  - scipy
+  - statsmodels
+  - notebook
+  - adaptive
+  - panel
+  - ipywidgets
+  - ipympl
+  - ipywidgets_bokeh
+  - colorcet
+  - k3d
+  - msgpack-python
+  - plotly::plotly
+  - vtk
+  - sympy_plot_backends
+  - pip
+prefix: D:\Users\John\miniconda3\envs\sympytools

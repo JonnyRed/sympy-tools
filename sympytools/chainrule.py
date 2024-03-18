@@ -80,14 +80,6 @@ c. chain_rule_derivative(expr, variables, *args)
    • This block uses doctest.testmod(verbose=False) to run the doctests
    defined in the examples within the functions for testing purposes.
 
-Note:
-
-   • The module uses a custom Function symbol named "f" for consistency in the
-   examples. You can replace it with your actual function symbol in
-   your applications.
-   • Remember to import the sympy_chain_rule module and use its functions with
-   appropriate arguments for your specific differentiation needs.
-
 """
 
 import sympy as sp
