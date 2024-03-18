@@ -213,6 +213,15 @@ def vector_to_list(frame: spv.ReferenceFrame, v: spv.Vector) -> list:
 
 
 def vector_line(start: spv.Vector, finish: spv.Vector) -> spv.Vector:
+    """Returns the vector that represents the line connecting the two given vectors
+
+    Args:
+        start (spv.Vector): start vector position
+        finish (spv.Vector): end vector position
+
+    Returns:
+        spv.Vector: line connecting the two given vectors
+    """
     return finish - start
 
 
