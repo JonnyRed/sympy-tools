@@ -2,7 +2,6 @@ archive/
 sandbox.*
 
 .ipynb_checkpoints/
-.vscode/
 .venv3?/
 *.sublime-project
 *.sublime-workspace

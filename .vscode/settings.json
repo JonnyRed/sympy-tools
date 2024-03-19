@@ -1,0 +1,48 @@
+{
+    "pylint.args": [
+        "--disable=W0613, W1401, W1404",
+        "--max-line-length=120"
+    ]
+    "files.autoSave": "afterDelay",
+    "python.analysis.diagnosticSeverityOverrides": {
+        "reportGeneralTypeIssues": "none"
+    },
+    "cSpell.customDictionaries": {
+        "sympy-attributes": {
+            "name": "sympy-words",
+            "path": "~/AppData/Roaming/Code-Data/dictionaries/sympy-attributes.txt",
+            "description": "Attributes of SymPy objects",
+            "addWords": false
+        },
+        "custom": true, // Enable the `custom` dictionary
+        "internal-terms": false // Disable the `internal-terms` dictionary
+    },
+    "cSpell.language": "en-GB",
+    "cSpell.ignoreRegExpList": [
+        "/\\\\[a-z]+/gi"
+    ],
+    "cSpell.words": [
+        "charliermarsh""columnize",
+        "doctests",
+        "dsolve",
+        "ipykernel",
+        "ipython",
+        "lambdify",
+        "lamda",
+        "latexs",
+        "miniconda",
+        "NEGATIVEINFINITY",
+        "nonumber",
+        "Numpy",
+        "Parens",
+        "POSITIVEINFINITY",
+        "pprint",
+        "printfield",
+        "splt",
+        "sympy",
+        "sympytools",
+        "textrm",
+        "vlatex",
+        "vprinting"
+    ],
+}
