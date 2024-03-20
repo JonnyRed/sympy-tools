@@ -2,7 +2,7 @@
     "pylint.args": [
         "--disable=W0613, W1401, W1404",
         "--max-line-length=120"
-    ]
+    ],
     "files.autoSave": "afterDelay",
     "python.analysis.diagnosticSeverityOverrides": {
         "reportGeneralTypeIssues": "none"
@@ -22,27 +22,41 @@
         "/\\\\[a-z]+/gi"
     ],
     "cSpell.words": [
-        "charliermarsh""columnize",
+        "Apoapsis",
+        "COLORS",
+        "NEGATIVEINFINITY",
+        "Numpy",
+        "POSITIVEINFINITY",
+        "PYTHONPATH",
+        "Parens",
+        "Periapsis",
+        "Youtube""charliermarsh",
+        "color",
+        "colorcet",
+        "columnize",
         "doctests",
         "dsolve",
         "ipykernel",
+        "ipympl",
         "ipython",
+        "ipywidgets",
         "lambdify",
         "lamda",
         "latexs",
-        "miniconda",
-        "NEGATIVEINFINITY",
+        "matplotlib""miniconda",
+        "msgpack",
         "nonumber",
-        "Numpy",
-        "Parens",
-        "POSITIVEINFINITY",
+        "plotly",
         "pprint",
         "printfield",
+        "scipy",
+        "seaborn",
         "splt",
+        "statsmodels",
         "sympy",
         "sympytools",
         "textrm",
         "vlatex",
         "vprinting"
-    ],
+    ]
 }
