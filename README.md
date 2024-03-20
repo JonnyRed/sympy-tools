@@ -6,18 +6,23 @@ a Python library for symbolic mathematics.
 
 # Installation
 
-The installation will be installed into a conda environment.
-The env will  be named `sympy_tools` (you can change this).
-You need to have the miniconda distribution installed  on your system.
-The environment will be installed thus:
+* miniconda distribution installed  on your system.
+* This installation is based on the very nicely explained
+by [Bits of Analytics][] in the document [Using pip with conda][] for local development projects document.
+* The installation will be installed into a conda environment.
+  * The env will  be named `sympy_tools` (you can change this).
+
+The `sympy_tools` environment will be installed thus:
 
 ```miniconda
 <user directory>\sympy\sympy-tools>conda env create -f "D:\Users\John\Documents\IPython Notebooks\sympy\sympy-tools\environment.yml"
 ```
 
-where `<user directory>\sympy\sympy-tools>` is the path where you want to
-install sympy and `environment.yml` is the environment to create. For
-`sympy-tools` its:
+* `<user directory>\sympy\sympy-tools>` is the directory where you want to install `sympy-tools`
+* `environment.yml` is the conda yml environment to create.
+  * `pip` is the last utility to be installed
+* For the `sympy-tools` environment
+* If the environment is to be changed then a complete  new conda environment should be  be created.
 
 ```yml
 name: sympytools
@@ -52,37 +57,29 @@ dependencies:
 prefix: D:\Users\John\miniconda3\envs\sympytools
 ```
 
-To install sympy-tools the following must be completed:
+To install `Sympy-tools` in the environment
 
-To install Sympy-tools, use pip:
+* pip  must be from the conda environment
+* The pip command must be executed in the `sympytools` source directory.
+  * `pip install -e .` ensures that  any changes made to the package are immediately available.
 
-```bash
-Copy code
-pip install sympy-tools
-```
+```miniconda
+\Users\John\Documents\IPython Notebooks\sympy\sympy-tools>D:\Users\John\miniconda3\envs\sympytools\Scripts\pip install -e .
+ ```
+
+A minimalist `setup` script is provided.
 
 # Usage
 
-Here's an example of how to use Sympy-tools:
+TODO provide example
 
-python
-Copy code
-from sympy_tools import some_function
+[Bits of Analytics]:https://bitsofanalytics.org/
 
-result = some_function(arg1, arg2)
-print(result)
-Documentation
-
-For detailed documentation, see the online documentation.
+[Using pip with conda]:https://bitsofanalytics.org/posts/pip-conda-local-dev/pip_conda_local_dev.html
 
 # Testing
 
-To test the code in this README, run the following python script:
-
-bash
-Copy code
-python -m doctest README.md  -v
-Contributing
+TODO add doctests that exist in the code already
 
 # License
 
